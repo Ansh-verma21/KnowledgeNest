@@ -18,7 +18,7 @@ const CourseDetails = () => {
     useEffect(()=> {
         const getCourseLecture = async()=> {
             try {
-                const res = await axios.get(`http://localhost:8000/api/v1/course/${courseId}/lecture`, {withCredentials:true})
+                const res = await axios.get(`https://knowledgenest-q9le.onrender.com/api/v1/course/${courseId}/lecture`, {withCredentials:true})
                 if(res.data.success){
                     setCourseLecture(res.data.lectures)
                 }
