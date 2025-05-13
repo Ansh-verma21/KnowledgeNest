@@ -15,6 +15,7 @@ const CourseDetails = () => {
     const { course } = useSelector(store => store.course)
     const selectedCourse = course.find(course => course._id === courseId)
     const [courseLecture, setCourseLecture] = useState(null)
+    let n=0
     useEffect(()=> {
         const getCourseLecture = async()=> {
             try {
@@ -29,6 +30,11 @@ const CourseDetails = () => {
         }
         getCourseLecture()
     })
+
+    const handleLectureClick = (index) => {
+        n = index
+        console.log(n);
+    }
     return (
         <div className='bg-gray-100 md:p-10 '>
             <Card className="max-w-7xl rounded-md mx-auto bg-white shadow-md pt-5 mt-14">
@@ -52,11 +58,9 @@ const CourseDetails = () => {
                         <img src={selectedCourse.courseThumbnail} alt="Thumbnail" className='w-full lg:w-1/3 rounded-md mb-4 lg:mb-0' />
                         <div>
                             <p className='text-gray-800 mb-4 font-semibold capitalize'>{selectedCourse.subTitle}</p>
-                            <p className='mb-4 text-gray-700' dangerouslySetInnerHTML={{ __html: selectedCourse.description }} />
+                            
                             <p className="text-gray-800 font-semibold">⭐⭐⭐⭐⭐ (4.8) | 1,200 reviews</p>
                             <div className='mt-1'>
-                                <p className="text-2xl font-bold text-gray-800">₹{selectedCourse.coursePrice}</p>
-                                <p className="text-gray-500 line-through">₹599</p>
                             </div>
                             <ul className="mt-4 space-y-2">
                                 <li className="text-gray-600">✔ 30+ hours of video content</li>
@@ -68,18 +72,7 @@ const CourseDetails = () => {
                 </div>
                 {/* Course Details Section */}
                 <div className="  p-6">
-                    <h2 className="text-xl font-bold text-gray-800 mb-4">What You'll Learn</h2>
-                    <ul className="list-disc pl-5 space-y-2 text-gray-700">
-                        <li>Build dynamic web applications with React and Node.js</li>
-                        <li>Deploy websites with modern tools like Vercel and Netlify</li>
-                        <li>Understand REST APIs and database integration</li>
-                    </ul>
-
-                    <h2 className="text-xl font-bold text-gray-800 mt-6 mb-4">Requirements</h2>
-                    <p className="text-gray-700">Basic programming knowledge is helpful but not required.</p>
-
-                    <h2 className="text-xl font-bold text-gray-800 mt-6 mb-4">Who This Course is For</h2>
-                    <p className="text-gray-700">Beginners, aspiring developers, and professionals looking to upgrade skills.</p>
+                    <p className='mb-4 text-gray-700' dangerouslySetInnerHTML={{ __html: selectedCourse.description }} />
                 </div>
                 {/* course lectures */}
                 {
@@ -92,7 +85,7 @@ const CourseDetails = () => {
                                     courseLecture?.map((lecture, index)=>{
                                         return <div key={index} className='flex items-center gap-3 bg-gray-200 p-4 rounded-md cursor-pointer'>
                                             <span>
-                                                { <PlayCircle size={20}/>}
+                                                { <Button onClick={handleLectureClick(index)}><PlayCircle size={20}/></Button>}
                                             </span>
                                             <p>{lecture.lectureTitle}</p>
                                         </div>
@@ -107,13 +100,12 @@ const CourseDetails = () => {
                                     <ReactPlayer 
                                     width="100%" 
                                     height="100%"
-                                    url={courseLecture ? courseLecture[0]?.videoUrl : null}
+                                    url={courseLecture ? courseLecture[n]?.videoUrl : null}
                                     controls={true}
                                     />
                                    </div>
-                                   <h1>{courseLecture ? courseLecture[0]?.lectureTitle : "Lecture Title"}</h1>
+                                   <h1>{courseLecture ? courseLecture[n]?.lectureTitle : "Lecture Title"}</h1>
                                    <Separator className="my-2"/>
-                                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, aspernatur a sed dolores possimus inventore amet quos ab rerum illo.</p>
                             </CardContent>
                             <CardFooter className="flex p-4">
                               <Button>Continue Course</Button>
@@ -133,7 +125,7 @@ const CourseDetails = () => {
                         />
                         <div>
                             <h3 className='text-lg font-bold text-gray-800'>{selectedCourse.creator.name}</h3>
-                            <p className='text-gray-600'>Senior Full-Stack Developer</p>
+                            
                         </div>
                     </div>
                     <p className='text-gray-700 mt-4'>
