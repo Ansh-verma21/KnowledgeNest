@@ -47,7 +47,7 @@ const Signup = () => {
         <div className='flex justify-center items-center min-h-screen bg-gray-100'>
             <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full'>
                 <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>Create Your Account</h1>
-                <p className='text-center text-gray-600 mb-8'>Join us today! It's quick and easy</p>
+                <p className='text-center text-gray-600 mb-8'>Sign up to start your learning journey.</p>
                 {/* Name input */}
                 <div className='mb-4'>
                     <Label>Full Name</Label>

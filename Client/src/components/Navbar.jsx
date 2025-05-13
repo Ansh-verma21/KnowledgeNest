@@ -33,7 +33,7 @@ const Navbar = () => {
                 <Link to='/'>
                     <div className='flex gap-1'>
                         <GraduationCap className='text-gray-300 w-10 h-10' />
-                        <h1 className='text-gray-300 text-3xl font-bold '>Logo</h1>
+                        <h1 className='text-gray-300 text-3xl font-bold '>KnowledgeNest</h1>
                     </div>
                 </Link>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
                             ) : (
                                 <div className='flex items-center gap-7'>
                                     {
-                                        user.role === "instructor" && <Link to="/admin/dashboard"><li className='cursor-pointer'>Admin</li></Link>
+                                        user.role === "instructor" && <Link to="/admin/course"><li className='cursor-pointer'>Admin</li></Link>
                                     }
                                     <Link to="/profile">
                                         <Avatar>

@@ -49,7 +49,7 @@ const Login = () => {
         <div className='flex justify-center items-center min-h-screen bg-gray-100'>
             <div className='bg-white shadow-lg rounded-lg p-8 max-w-md w-full'>
                 <h1 className='text-2xl font-bold text-center text-gray-800 mb-4'>Welcome Back</h1>
-                <p className='text-center text-gray-600 mb-8'>Please Login in to your Account</p>
+                <p className='text-center text-gray-600 mb-8'>Please Login to continue your learning journey.</p>
                
                 <div className='mb-4'>
                     <Label>Email Address</Label>
