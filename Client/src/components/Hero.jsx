@@ -9,7 +9,7 @@ const Hero = () => {
             <div className='lg:h-[700px] max-w-7xl mx-auto flex md:flex-row flex-col gap-10 items-center'>
                 {/* text section */}
                 <div className='space-y-7 px-4 md:px-0'>
-                    <h1 className='text-4xl mt-10 md:mt-0 md:text-6xl font-extrabold text-gray-200'>Explore Our <span className='text-blue-500'>Online Free <br />courses</span> <br />for Everyone</h1>
+                    <h1 className='text-4xl mt-10 md:mt-0 md:text-6xl font-extrabold text-gray-200'>Explore Our <span className='text-blue-500'><br />Online Free courses</span> <br />for Everyone</h1>
                     <p className='text-gray-300 text-lg'>Explore our courses to enhance your skills and knowledge. Created by Ansh.</p>
                     <div className='inline-flex relative'>
                         <input type="text" placeholder='Search Your Course Here...' className='bg-gray-200 w-[350px] md:w-[450px] text-gray-800 p-4 pr-40 rounded-lg rounded-r-xl placeholder:text-gray-500' />
