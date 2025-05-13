@@ -15,7 +15,6 @@ const CourseDetails = () => {
     const { course } = useSelector(store => store.course)
     const selectedCourse = course.find(course => course._id === courseId)
     const [courseLecture, setCourseLecture] = useState(null)
-    let n=0
     useEffect(()=> {
         const getCourseLecture = async()=> {
             try {
@@ -30,11 +29,6 @@ const CourseDetails = () => {
         }
         getCourseLecture()
     })
-
-    const handleLectureClick = (index) => {
-        n = index
-        console.log(n);
-    }
     return (
         <div className='bg-gray-100 md:p-10 '>
             <Card className="max-w-7xl rounded-md mx-auto bg-white shadow-md pt-5 mt-14">
@@ -85,7 +79,7 @@ const CourseDetails = () => {
                                     courseLecture?.map((lecture, index)=>{
                                         return <div key={index} className='flex items-center gap-3 bg-gray-200 p-4 rounded-md cursor-pointer'>
                                             <span>
-                                                { <Button onClick={handleLectureClick(index)}><PlayCircle size={20}/></Button>}
+                                                { <PlayCircle size={20}/>}
                                             </span>
                                             <p>{lecture.lectureTitle}</p>
                                         </div>
@@ -100,11 +94,11 @@ const CourseDetails = () => {
                                     <ReactPlayer 
                                     width="100%" 
                                     height="100%"
-                                    url={courseLecture ? courseLecture[n]?.videoUrl : null}
+                                    url={courseLecture ? courseLecture[0]?.videoUrl : null}
                                     controls={true}
                                     />
                                    </div>
-                                   <h1>{courseLecture ? courseLecture[n]?.lectureTitle : "Lecture Title"}</h1>
+                                   <h1>{courseLecture ? courseLecture[0]?.lectureTitle : "Lecture Title"}</h1>
                                    <Separator className="my-2"/>
                             </CardContent>
                             <CardFooter className="flex p-4">
