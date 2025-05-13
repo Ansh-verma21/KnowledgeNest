@@ -69,7 +69,7 @@ const Course = () => {
     useEffect(() => {
         const getCreatorCourse = async () => {
             try {
-                const res = await axios.get('https://knowledgenest-q9le.onrender.com/api/v1/course/', { withCredentials: true })
+                const res = await axios.get('http://localhost:8000/api/v1/course/', { withCredentials: true })
                 if (res.data.success) {
                     dispatch(setCourse(res.data.courses))
                 }
@@ -88,7 +88,7 @@ const Course = () => {
                 <TableHeader>
                     <TableRow>
                         <TableHead className="w-[100px]">Course</TableHead>
-                        <TableHead className='text-right'>Price</TableHead>
+                        {/* <TableHead className='text-right'>Price</TableHead> */}
                         <TableHead className='text-center'>Status</TableHead>
                         <TableHead className="text-right">Action</TableHead>
                     </TableRow>
@@ -100,7 +100,7 @@ const Course = () => {
                                 <img src={course?.courseThumbnail} alt="Thumbnail" className='w-20 hidden md:block rounded-sm'/>
                                 {course.courseTitle}
                             </TableCell>
-                            <TableCell className="font-medium text-right">{course.coursePrice || "NA"}</TableCell>
+                            {/* <TableCell className="font-medium text-right">{course.coursePrice || "NA"}</TableCell> */}
                             <TableCell className="text-center">
                                 <Badge className={course.isPublished ? "bg-green-400" : "bg-red-400"}>{course.isPublished ? "Published" : "Draft"}
                                 </Badge>

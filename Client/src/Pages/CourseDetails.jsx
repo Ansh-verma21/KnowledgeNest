@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import axios from 'axios'
-import { ArrowLeft, Lock, PlayCircle } from 'lucide-react'
+import { ArrowLeft, PlayCircle } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
 import { useSelector } from 'react-redux'
@@ -92,7 +92,7 @@ const CourseDetails = () => {
                                     courseLecture?.map((lecture, index)=>{
                                         return <div key={index} className='flex items-center gap-3 bg-gray-200 p-4 rounded-md cursor-pointer'>
                                             <span>
-                                                {lecture.isPreviewFree ? <PlayCircle size={20}/>:<Lock size={20}/>}
+                                                { <PlayCircle size={20}/>}
                                             </span>
                                             <p>{lecture.lectureTitle}</p>
                                         </div>

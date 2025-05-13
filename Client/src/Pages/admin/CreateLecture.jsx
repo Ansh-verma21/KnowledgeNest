@@ -55,7 +55,7 @@ const CreateLecture = () => {
   return (
     <div className='p-4 md:p-10 md:pr-20 h-screen'>
       <h1 className='text-2xl font-bold mb-2'>Lets Add <span className='text-blue-600'>Lectures</span></h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex eius necessitatibus fugit vel distinctio architecto, ut ratione rem nobis eaque?</p>
+      <p>Create lectures for your content here.</p>
       <div className='mt-10 space-y-5'>
         <div>
             <Label>Title</Label>

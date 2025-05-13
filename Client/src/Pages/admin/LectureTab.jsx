@@ -19,7 +19,7 @@ const LectureTab = () => {
     const selectedLecture = lecture.find(lecture => lecture._id === lectureId)
     const [lectureTitle, setLectureTitle] = useState(selectedLecture.lectureTitle)
     const [uploadVideoInfo, setUploadVideoInfo] = useState(null)
-    const [isFree, setIsFree] = useState(selectedLecture.isPreviewFree)
+    // const [isFree, setIsFree] = useState(selectedLecture.isPreviewFree)
     const [mediaProgress, setMediaProgress] = useState(false)
     const [uploadProgress, setUploadProgress] = useState(0)
     const [loading, setLoading] = useState(false)
@@ -139,10 +139,10 @@ const LectureTab = () => {
                         onChange={fileChangeHandler}
                     />
                 </div>
-                <div className='flex items-center space-x-2 my-5'>
+                {/* <div className='flex items-center space-x-2 my-5'>
                     <Switch checked={isFree} onCheckedChange={setIsFree} className="bg-gray-800" />
                     <Label>Is this video FREE</Label>
-                </div>
+                </div> */}
                 {
                     mediaProgress && (
                         <div className='my-4'>

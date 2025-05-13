@@ -89,7 +89,7 @@ const CourseTab = () => {
         formData.append("description", input.description);
         formData.append("category", input.category);
         formData.append("courseLevel", input.courseLevel);
-        formData.append("coursePrice", input.coursePrice);
+        formData.append("coursePrice", 0);
         formData.append("file", input.courseThumbnail);
 
         try {
@@ -198,7 +198,7 @@ const CourseTab = () => {
                                 </SelectContent>
                             </Select>
                         </div>
-                        <div>
+                        {/* <div>
                             <Label>Price in (INR)</Label>
                             <Input
                                 type="number"
@@ -208,7 +208,7 @@ const CourseTab = () => {
                                 placeholder="199"
                                 className="w-fit"
                             />
-                        </div>
+                        </div> */}
                     </div>
                     <div>
                         <Label>Course Thumbnail</Label>
