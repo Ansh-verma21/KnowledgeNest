@@ -61,7 +61,7 @@ const LectureTab = () => {
         const data = {
             lectureTitle,
             videoInfo: uploadVideoInfo,
-            isPreviewFree: isFree,
+            isPreviewFree: true,
         }
         try {
             setLoading(true)
